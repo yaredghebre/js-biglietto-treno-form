@@ -29,9 +29,9 @@
 
     let price = userDistance * pricePerKm
 
-    if (userAge == "junior"){
+    if (userAge === "junior"){
         price = price - (price / 100 * 20);
-    } else if (userAge =="senior") {
+    } else if (userAge === "senior") {
         price = price - (price / 100 * 40);
     }
 
