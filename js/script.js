@@ -2,10 +2,7 @@
 // INPUT
     const submitBtn = document.getElementById("submit-btn");
     submitBtn.addEventListener("click", function() {
-    const result = document.getElementById("result");
-    // Reset dei risultati
-    result.className = "";
-    
+
     // Chiedere Nome e cognome
     const userNameInput = document.getElementById("user-name");
     const userName = userNameInput.value;
@@ -18,10 +15,10 @@
     const userDistance = userDistanceInput.value;
 
     // Chiedere età
-    const userAgeInput = document.querySelector("user-age");
-    const userAge = userAgeInput;
+    const userAgeInput = document.getElementById("user-age");
+    const userAge = userAgeInput.value;
 
-    console.log(userName, userSurname, userDistance);
+    console.log(userName, userSurname, userDistance, userAge);
 
 // LOGICA
     // Prezzo percorrenza per Km
@@ -31,7 +28,7 @@
 
     if (userAge === "junior"){
         price = price - (price / 100 * 20);
-    } else if (userAge === "senior") {
+    } else if (userAge === "senior"){
         price = price - (price / 100 * 40);
     }
 
@@ -39,7 +36,7 @@
 
     // Assegnazione Random carrozza e Codice CP
     const rndCarr = Math.floor(Math.random() * 10) + 1;
-    const rndTicket = Math.floor(Math.random() * 9500) + 9000;
+    const rndTicket = Math.floor(Math.random() * (9500 - 9000)) + 9000;
     console.log(rndCarr, rndTicket);
 
 // OUTPUT 
