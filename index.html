@@ -4,41 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <!-- Custom Style -->
     <link rel="stylesheet" href="css/style.css">
     <title>Form Train Ticket</title>
 </head>
 <body>
-    <h1>BENVENUTO</h1>
+    <div class="container mt-5">
+        <h1 class="text-center fw-bold mb-5">BOOLET TRAIN</h1>
 
-    <h2>Calcola il prezzo del tuo biglietto</h2>
-    <div class="ticket-details">
-        <label for="user-name-surname">Nome e Cognome</label>
-        <input type="text" id="user-name-surname">
+        <!-- INPUT DATI -->
+        <section class="input-details mb-5 bg-primary rounded p-5">
+            <!-- first row -->
+            <h2 class="fw-bold mb-5">Calcola il prezzo del tuo biglietto:</h2>
+            <div class="row bg-warning p-5 rounded mb-5">
+                <div class="col-4 text-center">
+                    <label for="user-name-surname">Nome e Cognome</label>
+                    <input type="text" id="user-name-surname" name="name" placeholder="Inserisci il tuo Nome e Cognome">
+                </div>
 
-        <label for="user-distance">Distanza (in Km)</label>
-        <input type="number" id="user-distance">
+                <div class="col-4 text-center">
+                    <label for="user-distance">Distanza (in Km)</label>
+                    <input type="number" id="user-distance" name="km" placeholder="Inserisci i km">
+                </div>
 
-        <label for="user-age">Fascia età</label>
-        <select id="user-age">
-            <option value="">-</option>
-            <option value="junior">meno di 18 anni</option>
-            <option value="standard">tra i 19 e i 64 anni</option>
-            <option value="senior">dai 65 anni in su</option>
-        </select>
-        <div>
-            <button id="submit-btn">Invia</button>
-            <button id="reset-btn">Annulla</button>
-        </div>
+                <div class="col-4 text-center">
+                    <label for="user-age">Fascia età</label>
+                    <select id="user-age" class="" name="age">
+                        <option value="">-</option>
+                        <option value="junior">meno di 18 anni</option>
+                        <option value="standard">tra i 19 e i 64 anni</option>
+                        <option value="senior">dai 65 anni in su</option>
+                    </select>
+                </div>    
+            </div>
 
-        <div class="biglietto">
-        <h2 id="result">Il tuo biglietto:</h2>
-        <div id="biglietto" class="hidden">
-            
-        </div>
+            <!-- error msg -->
+            <div class="row text-center hidden mb-3" id="error-message">
+                <h2>C'è un errore nell'inserimento dati!</h2> 
+            </div>
 
-        </div>
+            <!-- second row -->
+            <div class="row">
+                <div class="col-6 d-flex ">
+                    <button type="button" id="submit-btn" class="btn btn-success">Invia</button>
+                </div>
+                <div class="col-6 d-flex">
+                    <button type="button" id="reset-btn" class="btn btn-danger">Annulla</button>
+                </div>
+            </div>
+        </section>
 
-    </div>
+        <!-- OUTPUT DATI -->
+        <section class="output-details">
+            <h2 class="fw-bold">Il tuo biglietto:</h2>
+            <div id="biglietto" class="hidden">
+                <h3>Dettaglio passeggero</h3>
+                <div class="details">
+                    <div class="name">
+                        <h3>Nome e Cognome <span id="age"></span></h3>
+                        <h4 id="passenger-name"></h4>
+                    </div>
+                    <div class="category">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Categoria</th>
+                                    <th>Carrozza</th>
+                                    <th>Codice CP</th>
+                                    <th>Prezzo Biglietto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span id="category-type"></span></td>
+                                    <td><span id="carriage"></span></td>
+                                    <td><span id="cp-code"></span></td>
+                                    <td><span id="price"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>    
+
     <script src="js/script.js"></script>
 </body>
 </html>

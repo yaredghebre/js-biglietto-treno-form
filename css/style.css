@@ -1,0 +1,17 @@
+body {
+    background-color: lightblue;
+}
+
+.hidden {
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+.shown {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.row-b {
+    width: 20%;
+}
