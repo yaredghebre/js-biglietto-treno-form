@@ -12,11 +12,8 @@
 
     <h2>Calcola il prezzo del tuo biglietto</h2>
     <div class="ticket-details">
-        <label for="user-name">Nome</label>
-        <input type="text" id="user-name">
-
-        <label for="user-surname">Cognome</label>
-        <input type="text" id="user-surname">
+        <label for="user-name-surname">Nome e Cognome</label>
+        <input type="text" id="user-name-surname">
 
         <label for="user-distance">Distanza (in Km)</label>
         <input type="number" id="user-distance">
@@ -28,12 +25,18 @@
             <option value="standard">tra i 19 e i 64 anni</option>
             <option value="senior">dai 65 anni in su</option>
         </select>
+        <div>
+            <button id="submit-btn">Invia</button>
+            <button id="reset-btn">Annulla</button>
+        </div>
 
-        <button id="submit-btn">Invia</button>
-        <button id="reset-btn">Annulla</button>
-
-       
+        <div class="biglietto">
         <h2 id="result">Il tuo biglietto:</h2>
+        <div id="biglietto" class="hidden">
+            
+        </div>
+
+        </div>
 
     </div>
     <script src="js/script.js"></script>

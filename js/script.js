@@ -4,44 +4,53 @@
     submitBtn.addEventListener("click", function() {
 
     // Chiedere Nome e cognome
-    const userNameInput = document.getElementById("user-name");
-    const userName = userNameInput.value;
-
-    const userSurnameInput = document.getElementById("user-surname");
-    const userSurname = userSurnameInput.value;
+    const userNameSurnameInput = document.getElementById("user-name-surname");
+    const userNameSurname = userNameSurnameInput.value;
 
     // Chiedere numero di chilometri
     const userDistanceInput = document.getElementById("user-distance");
-    const userDistance = userDistanceInput.value;
+    const userDistance = parseInt(userDistanceInput.value);
 
     // Chiedere età
     const userAgeInput = document.getElementById("user-age");
     const userAge = userAgeInput.value;
 
-    console.log(userName, userSurname, userDistance, userAge);
+    console.log(userNameSurname, userDistance, userAge);
+
 
 // LOGICA
-    // Prezzo percorrenza per Km
-    const pricePerKm = 0.21    
 
-    let price = userDistance * pricePerKm
+    const basePrice = userDistance * 0.21
+    let finalPrice = basePrice
+    let offer = " Standard";
 
     if (userAge === "junior"){
-        price = price - (price / 100 * 20);
+        finalPrice = basePrice - (basePrice / 100 * 20);
+        offer = "Junior";
     } else if (userAge === "senior"){
-        price = price - (price / 100 * 40);
+        finalPrice = basePrice - (basePrice / 100 * 40);
+        offer = "Senior";
     }
-
-    console.log(price);
+    console.log(finalPrice);
 
     // Assegnazione Random carrozza e Codice CP
     const rndCarr = Math.floor(Math.random() * 10) + 1;
     const rndTicket = Math.floor(Math.random() * (9500 - 9000)) + 9000;
     console.log(rndCarr, rndTicket);
 
+
 // OUTPUT 
-    result.innerHTML = `NOME: ${userName} COGNOME: ${userSurname} CARROZZA: ${rndCarr} CODICE CP: ${rndTicket} PREZZO BIGLIETTO: € ${price.toFixed(2)}`;
+// correzzione
+    document.getElementById("")
+    document.getElementById("")
+    document.getElementById("")
+    document.getElementById("")
+    document.getElementById("")
+
+    // result.innerHTML = `IL TUO BIGLIETTO= NOME E COGNOME: ${userNameSurname} OFFERTA: ${offer} CARROZZA: ${rndCarr} CODICE CP: ${rndTicket} PREZZO BIGLIETTO: € ${finalPrice.toFixed(2)}`;
 });
+
+
 
 
 // Reset dei campi
